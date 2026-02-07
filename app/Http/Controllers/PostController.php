@@ -32,9 +32,14 @@ class PostController extends Controller
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
 
+    public function show(Post $post)
+    {
+        return view('posts.show')->with('post', $post->loadCustomFields());
+    }
+
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        return view('posts.edit')->with('post', $post->loadCustomFields());
     }
 
     public function update(UpdatePostRequest $request, Post $post)

@@ -37,6 +37,7 @@
                             @endif
                         </div>
                         <div class="ml-4 flex-shrink-0 flex items-center space-x-4">
+                            <a href="{{ route('products.show', $product) }}" class="text-gray-600 hover:text-gray-900 font-medium text-sm">View</a>
                             <a href="{{ route('products.edit', $product) }}" class="text-indigo-600 hover:text-indigo-900 font-medium text-sm">Edit</a>
                             <form action="{{ route('products.destroy', $product) }}" method="POST" onsubmit="return confirm('Are you sure?');" class="inline">
                                 @csrf

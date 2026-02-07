@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="mt-5 md:mt-0 md:col-span-2">
-            <form action="{{ route('posts.update', $post) }}" method="POST">
+            <form action="{{ route('posts.update', $post) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
