@@ -113,7 +113,7 @@
         </main>
         
         <footer class="bg-white border-t border-gray-100 mt-auto">
-             <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <p class="text-center text-sm font-medium text-gray-400">
                     &copy; {{ date('Y') }} CustomFields Demo. Built with Laravel & Tailwind CSS.
                 </p>
