@@ -8,17 +8,11 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../laravel-custom-fields/laravel-custom-fields"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
-        "salah/laravel-custom-fields": "dev-main"
+        "salah/laravel-custom-fields": "^1.0.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
