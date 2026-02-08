@@ -1,66 +1,33 @@
 # Custom Fields Test App
 
-This project is a experimental Laravel application designed to test and demonstrate the capabilities of the `laravel-custom-fields` package.
+Experimental Laravel application for testing the [Laravel Custom Fields](https://github.com/salaheldeen911/laravel-custom-fields) package.
 
-## 🚀 Installation & Setup
+## 🚀 Quick Start
 
-Follow these steps to get the project running locally:
-
-### 1. Clone the Project
+### 1. Project Setup
 ```bash
-git clone <repository-url> custom-fields-app
+git clone <repository-url>
 cd custom-fields-app
-```
-
-### 2. Install Dependencies
-```bash
 composer install
-npm install
 ```
 
-### 3. Environment Configuration
-Copy the template environment file:
-```bash
-cp .env.example .env
-```
-Ensure your `.env` is configured for **MySQL**:
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=custom_fields
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-### 4. Initialize Database & Generate Keys
+### 2. Environment & Database
+1. Copy `.env.example` to `.env`.
+2. Create a MySQL database named `custom_fields_app` (as defined in `.env.example`).
+3. Run migrations and generate key:
 ```bash
 php artisan key:generate
 php artisan migrate
 ```
 
-### 5. Install Custom Fields Package
-Run the installation command to publish config and migrations:
-```bash
-php artisan custom-fields:install
-```
-
-### 6. Run the Application
+### 3. Run Application
 ```bash
 php artisan serve
-npm run dev
 ```
 
-## 🧪 Testing Custom Fields
+---
 
-You can access the management UI at:
-`http://127.0.0.1:8000/custom-fields`
+## 📖 Documentation
+The **Laravel Custom Fields** package is already installed. For full documentation on how to use it, field types, and API reference, please visit the official repository:
 
-To test API responses:
-`GET /api/custom-fields/models-and-types`
-
-## 🛠 Maintenance
-To prune deleted fields:
-```bash
-php artisan custom-fields:prune
-```
+👉 **[salaheldeen911/laravel-custom-fields](https://github.com/salaheldeen911/laravel-custom-fields)**
