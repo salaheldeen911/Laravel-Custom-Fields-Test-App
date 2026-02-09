@@ -1,10 +1,14 @@
 <?php
 
 // config for CustomFields /LaravelCustomFields
+
+use App\Models\Post;
+use App\Models\Product;
+
 return [
     'models' => [
-        'post' => 'App\Models\Post',
-        'product' => 'App\Models\Product',
+        'post' => Post::class,
+        'product' => Product::class,
     ],
     'routing' => [
         'api' => [
