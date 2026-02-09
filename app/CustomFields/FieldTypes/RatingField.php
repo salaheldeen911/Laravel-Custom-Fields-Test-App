@@ -4,7 +4,9 @@ namespace App\CustomFields\FieldTypes;
 
 use Salah\LaravelCustomFields\FieldTypes\FieldType;
 
-class RatingField extends FieldType
+use Salah\LaravelCustomFields\Contracts\HasOptions;
+
+class RatingField extends FieldType implements HasOptions
 {
     public function name(): string
     {
@@ -30,6 +32,11 @@ class RatingField extends FieldType
     public function htmlTag(): string
     {
         return 'select';
+    }
+
+    public function htmlAttribute(): string
+    {
+        return '';
     }
 
     public function options(): array
