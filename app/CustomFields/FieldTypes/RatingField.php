@@ -2,9 +2,8 @@
 
 namespace App\CustomFields\FieldTypes;
 
-use Salah\LaravelCustomFields\FieldTypes\FieldType;
-
 use Salah\LaravelCustomFields\Contracts\HasOptions;
+use Salah\LaravelCustomFields\FieldTypes\FieldType;
 
 class RatingField extends FieldType implements HasOptions
 {
