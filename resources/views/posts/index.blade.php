@@ -20,20 +20,20 @@
                             <p class="mt-1 flex items-center text-sm text-gray-500">
                                 <span class="truncate">{{ Str::limit($post->content, 50) }}</span>
                             </p>
-                            
+
                             {{-- Display Custom Fields Summary (e.g. first 3) --}}
                             @php
-                                $customData = $post->customFieldsResponse();
+                            $customData = $post->customFieldsResponse();
                             @endphp
                             @if(!empty($customData))
                             <div class="mt-2 flex flex-wrap gap-2">
                                 @foreach(array_slice($customData, 0, 3) as $key => $value)
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 border border-gray-200">
-                                        {{ Str::studly($key) }}: {{ is_array($value) ? 'Array' : Str::limit($value, 20) }}
-                                    </span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 border border-gray-200">
+                                    {{ Str::studly($key) }}: {{ is_array($value) ? 'Array' : Str::limit($value, 20) }}
+                                </span>
                                 @endforeach
                                 @if(count($customData) > 3)
-                                    <span class="text-xs text-gray-400 self-center">+{{ count($customData) - 3 }} more</span>
+                                <span class="text-xs text-gray-400 self-center">+{{ count($customData) - 3 }} more</span>
                                 @endif
                             </div>
                             @endif
@@ -56,6 +56,9 @@
             </li>
             @endforelse
         </ul>
+        <div class="px-4 py-3 border-t border-gray-200 sm:px-6">
+            {{ $posts->links() }}
+        </div>
     </div>
 </div>
 @endsection

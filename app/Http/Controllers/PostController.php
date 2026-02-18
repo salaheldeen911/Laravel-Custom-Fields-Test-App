@@ -12,7 +12,7 @@ class PostController extends Controller
     public function index()
     {
         // Eager load custom fields values
-        $posts = Post::withCustomFields()->latest()->get();
+        $posts = Post::withCustomFields()->latest()->paginate(10);
 
         return view('posts.index', compact('posts'));
     }

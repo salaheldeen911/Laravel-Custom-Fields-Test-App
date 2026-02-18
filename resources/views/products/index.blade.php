@@ -21,17 +21,17 @@
                                 <span class="font-bold text-gray-900 mr-2">${{ number_format($product->price, 2) }}</span>
                                 <span class="truncate text-gray-400">{{ Str::limit($product->description, 40) }}</span>
                             </p>
-                            
+
                             {{-- Display Custom Fields Summary --}}
                             @php
-                                $customData = $product->customFieldsResponse();
+                            $customData = $product->customFieldsResponse();
                             @endphp
                             @if(!empty($customData))
                             <div class="mt-2 flex flex-wrap gap-2">
                                 @foreach(array_slice($customData, 0, 3) as $key => $value)
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
-                                        {{ Str::studly($key) }}: {{ is_array($value) ? 'Array' : Str::limit($value, 20) }}
-                                    </span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                                    {{ Str::studly($key) }}: {{ is_array($value) ? 'Array' : Str::limit($value, 20) }}
+                                </span>
                                 @endforeach
                             </div>
                             @endif
@@ -54,6 +54,9 @@
             </li>
             @endforelse
         </ul>
+        <div class="px-4 py-3 border-t border-gray-200 sm:px-6">
+            {{ $products->links() }}
+        </div>
     </div>
 </div>
 @endsection

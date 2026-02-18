@@ -10,15 +10,15 @@ return new class extends Migration
     {
         Schema::create('custom_fields', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->index();
             $table->string('slug')->index();
-            $table->string('model');
-            $table->string('type');
-            $table->string('placeholder')->nullable();
+            $table->string('model')->index();
+            $table->string('type')->index();
             $table->boolean('required')->default(0)->index();
+            $table->string('placeholder')->nullable();
             $table->json('options')->nullable();
             $table->json('validation_rules')->nullable();
-            $table->index(['name', 'model', 'type']);
+            $table->unique(['model', 'slug', 'name'], 'model_field_slug_unique');
             $table->softDeletes();
             $table->timestamps();
         });
